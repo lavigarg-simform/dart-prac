@@ -1,5 +1,3 @@
-import 'dart:async';
-
 void main() {
   //named record
   var record = (A: 1, B: 2, C: 3, D: 4);
