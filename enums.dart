@@ -7,6 +7,19 @@ enum Weekdays {
   Saturday,
   Sunday,
 }
+enum Fruits {
+  Apple(color: 'red', shape: 'round'),
+  Banana(color: 'red', shape: 'round'),
+  Coconut(color: 'red', shape: 'round'),
+  DragonFruit(color: 'red', shape: 'round');
+
+  final String color;
+  final String shape;
+
+  const Fruits({required this.color, required this.shape});
+
+  String get description => 'The shape is $shape and color is $color';
+}
 
 void main() {
   var op = Weekdays.Monday;
@@ -32,18 +45,11 @@ void main() {
       print("Sunday");
       break;
   }
+
+  var fru= Fruits.Apple;
+  print(fru.color);
+  print(fru.description);
 }
 
-enum Fruits {
-  Apple(color: 'red', shape: 'round'),
-  Banana(color: 'red', shape: 'round'),
-  Coconut(color: 'red', shape: 'round'),
-  DragonFruit(color: 'red', shape: 'round');
 
-  final String color;
-  final String shape;
 
-  const Fruits({required this.color, required this.shape});
-
-  String get description => 'The shape is $shape and color is $color';
-}
