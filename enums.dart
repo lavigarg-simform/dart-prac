@@ -34,16 +34,16 @@ void main() {
   }
 }
 
+enum Fruits {
+  Apple(color: 'red', shape: 'round'),
+  Banana(color: 'red', shape: 'round'),
+  Coconut(color: 'red', shape: 'round'),
+  DragonFruit(color: 'red', shape: 'round');
 
-enum Fruits{
   final String color;
-  final String Shape;
+  final String shape;
 
-  Fruits({required String this.color, required String this.shape});
+  const Fruits({required this.color, required this.shape});
 
-  Apple(color:'red', shape:'round'),
-  Banana(),
-  Coconut(),
-  DragonFruit();
-
+  String get description => 'The shape is $shape and color is $color';
 }
