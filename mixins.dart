@@ -8,14 +8,20 @@ mixin SomeWork{
   }
 }
 
-mixin TeamMeet{
+mixin TeamMeet on Employee{
   Future<void> callTeamMeet() async {
     print("Team meeting started");
     await Future.delayed(Duration(seconds: 5), ()=> print("Meeting is ongoing"));
     print("Team meeting ended");
   }
 }
-class Employee with SomeWork, TeamMeet{
+
+mixin class MixinClass{
+  void printDesc(){
+    print("This is a mixin class!");
+  }
+}
+class Employee with SomeWork{
   String? name;
 
   @override
@@ -28,7 +34,10 @@ class Employee with SomeWork, TeamMeet{
 
 }
 
-class Intern extends Employee{
+class Intern extends Employee with TeamMeet{
+
+}
+class Manager{
 
 }
 
@@ -41,4 +50,8 @@ void main(){
   intern.takeANap();
   intern.drinkCoffee();
   intern.callTeamMeet();
+
+  //creating object of mixin class
+  var mixinClass= MixinClass();
+  mixinClass.printDesc();
 }
