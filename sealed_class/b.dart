@@ -16,14 +16,17 @@ class D extends Operations{
 //
 // }
 
+
 void main(){
 
   A a= A();
   print(a.name);
+  a.printDesc();
 
   C c= C();
   print(c.name);
 
+  print("\nB class");
   B b= B();
   b.printDesc();
 
